@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'dev.fs.mad.game10'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "dev.fs.mad.game10"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //implementation'com.appsflyer:af-android-sdk:6.12.4'
+    implementation'com.alibaba:fastjson:2.0.42'
+
+    // In-App Notification
+    implementation 'com.pusher:pusher-java-client:2.4.2'
+    implementation 'com.pusher:push-notifications-android:1.9.0'
+
+    implementation 'com.android.volley:volley:1.2.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation "com.airbnb.android:lottie:4.2.0"
+
+    implementation 'com.google.android.gms:play-services-base:18.2.0'
+    implementation 'com.google.firebase:firebase-messaging:23.4.0'
+
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+
+    // AppsFlyer Integration
+    // Only add the following dependencies if will use AppsFlyer
+    //implementation 'com.appsflyer:af-android-sdk:6.12.4'
+    //implementation 'com.android.installreferrer:installreferrer:2.2'
+
+    // Adjust Integration
+    // Only add the following dependencies if will use Adjust
+    //implementation 'com.adjust.sdk:adjust-android:4.33.5'
+    // implementation 'com.adjust.sdk:adjust-android-webbridge:4.33.5'
+}
